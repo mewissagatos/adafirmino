@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primaria: #9ABAC8;
+  --secundaria: #2C4A57;
+  --acento: #D9A066;
+  --neutro: #FAFAFA;
+  --texto: #484848;
+  --heading: #3b4a5c;
+
+  --font-titulo: 'Bodoni Moda', Didot, Georgia, serif;
+  --font-corpo: 'Poppins', system-ui, sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: var(--neutro);
+    color: var(--texto);
+    font-family: var(--font-corpo);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-titulo);
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--heading);
+    font-weight: 400;
+  }
+
+  /* Pesos médios em títulos menores — Didone fica mais legível */
+  h4,
+  h5,
+  h6 {
+    color: var(--heading);
+    font-weight: 500;
+  }
+
+  p,
+  li,
+  label,
+  input,
+  textarea,
+  button,
+  a {
+    font-family: var(--font-corpo);
+  }
+
+  input,
+  textarea {
+    -webkit-user-select: text;
+    user-select: text;
+    cursor: text;
+  }
+}
+
+@layer components {
+  .title-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .title-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    height: 2px;
+    width: 4rem;
+    background-color: var(--acento);
+  }
+
+  .pode-copiar {
+    -webkit-user-select: text;
+    user-select: text;
+    cursor: text;
+  }
+}
+
+/* Lenis Recommended CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
